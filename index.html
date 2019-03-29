@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sliding Menue</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="myNav" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="rightcloseNav()"
+          >&times;</a
+        >
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+          <img src="./Slide 2a-01.png" style="width: 55%" alt="PWC" />
+        </div>
+      </div>
+      <div id="myNav2" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="leftCloseNav()"
+          >&times;</a
+        >
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+          <img
+            src="./Slide 2a-01 - Copy.png"
+            style="width: 55%"
+            alt="Local Vendor"
+          />
+        </div>
+      </div>
+      <div id="myNav3" class="overlay">
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="downCloseNav()"
+          >&times;</a
+        >
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <!-- <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a> -->
+          <img src="./Down.gif" style="top: 10%" alt="Nature" />
+        </div>
+      </div>
+      <div>
+        <img
+          src="./Untitled-1.gif"
+          style="width: 80%; height: 50%; text-align: center"
+          alt="Landing"
+        />
+        <div style="text-align: center;line-height: 200%">
+          <h1 st>
+            So what do you want to do?
+            <br />
+            <span
+              class="txt-type"
+              data-wait="3000"
+              data-words='["Call a Small Vendor?"," Solve Yourself?","Call PWC?"]'
+            >
+            </span>
+          </h1>
+        </div>
+      </div>
+
+      <div style="text-align: center">
+        <img
+          class="btn"
+          src="./button 1.png"
+          alt=""
+          srcset=""
+          style="width: 100px;"
+          onclick="fromLeft()"
+        />
+        <img
+          src="./button 2.png"
+          alt=""
+          srcset=""
+          style="width: 100px;"
+          onclick="fromDown()"
+        />
+        <img
+          src="./button 3.png"
+          alt=""
+          srcset=""
+          style="width: 100px;"
+          onclick="fromRight()"
+        />
+        <!-- <span onclick="fromLeft()">Left</span>
+      <span onclick="fromDown()">Down</span>
+      <span onclick="fromRight()">Right</span> -->
+      </div>
+
+      <script>
+        function fromRight() {
+          document.getElementById("myNav").style.height = "100%";
+          document.getElementById("myNav").style.width = "100%";
+          document.getElementById("myNav").style.left = "0";
+        }
+
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function rightcloseNav() {
+          document.getElementById("myNav").style.left = "100%";
+          document.getElementById("myNav").style.width = "0";
+          document.getElementById("myNav").style.height = "100%";
+        }
+        function fromLeft() {
+          document.getElementById("myNav2").style.width = "100%";
+          document.getElementById("myNav2").style.height = "100%";
+        }
+        function leftCloseNav() {
+          document.getElementById("myNav2").style.width = "0";
+          document.getElementById("myNav2").style.height = "100%";
+        }
+        function fromDown() {
+          document.getElementById("myNav3").style.height = "100%";
+          document.getElementById("myNav3").style.width = "100%";
+          document.getElementById("myNav3").style.overflowY = "hidden";
+        }
+        function downCloseNav() {
+          document.getElementById("myNav3").style.height = "0";
+          document.getElementById("myNav3").style.width = "0";
+        }
+        var btn = document.getElementsByClassName("btn")[0];
+        document
+          .getElementsByClassName("btn")[0]
+          .addEventListener("mouseover", function(e) {
+            btn.src = "./btn1_Red.jpg";
+            console.log("triggered");
+          });
+        document
+          .getElementsByClassName("btn")[0]
+          .addEventListener("mouseout", function(e) {
+            btn.src = "./button 1.png";
+            console.log("triggered2");
+          });
+      </script>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
